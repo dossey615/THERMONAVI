@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    //BLE専用変数
+    var periReady: Bool = false
+    var cmReady: Bool = false
+    var peri: CBPeripheral!
+    var cm: CBCentralManager!
+    var ch: CBCharacteristic!
+    
+    //History変数
+    let savedata = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        sleep(3);
         return true
     }
 

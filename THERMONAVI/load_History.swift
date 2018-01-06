@@ -30,5 +30,19 @@ class history_load{
         }
         return name
     }
+    
+    func clearData(){
+        if var namedata = appDelegate.savedata.object(forKey: "NAME") as? [String] {
+            var latdata = appDelegate.savedata.object(forKey: "LAT") as! [Double]
+            var londata = appDelegate.savedata.object(forKey: "LON") as! [Double]
+            namedata.removeAll()
+            latdata.removeAll()
+            londata.removeAll()
+            appDelegate.savedata.set(namedata, forKey:"NAME")
+            appDelegate.savedata.set(latdata, forKey:"LAT")
+            appDelegate.savedata.set(londata, forKey:"LON")
+    }
+    }
+    
 }
 
