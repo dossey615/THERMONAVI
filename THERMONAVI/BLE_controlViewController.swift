@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  BLE_controlViewController.swift
 //  THERMONAVI
 //
-//  Created by 土居将史 on 2017/11/29.
+//  Created by 土居将史 on 2017/11/24.
 //  Copyright © 2017年 土居将史. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class BLE_controlViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
