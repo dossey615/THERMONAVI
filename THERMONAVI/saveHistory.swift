@@ -13,6 +13,7 @@ class history_save{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var flag = 0;
+    //保存用の配列
     var name:[String] = []
     var lat:[Double] = []
     var lon:[Double] = []
