@@ -39,6 +39,10 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         myLocationManager.requestWhenInUseAuthorization()
         //デリゲート先を自分に設定する。
         self.SearchBar.delegate = self
+        //検索バーのキャンセルボタンテキスト
+        SearchBar.setValue("キャンセル", forKey: "_cancelButtonText")
+        //キャンセルボタンの色指定
+        SearchBar.tintColor = UIColor.red
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -68,7 +72,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         // 逆ジオコーディング開始.
         myGeocorder.reverseGeocodeLocation(myLocation,completionHandler: { (placemarks, error) -> Void in
             for placemark in placemarks! {
-                if(placemark.postalCode != nil){
+                if(placemark.postalCode != nil ){
                     self.pinByLongPress.subtitle = "〒\(String(describing: placemark.postalCode!))"
                     self.pinByLongPress.title = "\(String(describing: placemark.administrativeArea!))"+" "+"\(String(describing: placemark.locality!))"+" "+"\(String(describing: placemark.subLocality!))"
                 }
@@ -82,10 +86,16 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         self.MapView.addAnnotation(pinByLongPress)
         
     }
-    
+    //サーチバータッチ前
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool{
+        searchBar.showsCancelButton = true
+        return true
+    }
+    //キャンセルボタンが押された
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        self.view.endEditing(true)
         //キーボードを閉じる。
-        SearchBar.resignFirstResponder()
     }
     
     //検索ボタン押下時の呼び出しメソッド
