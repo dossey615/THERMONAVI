@@ -15,8 +15,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
     @IBOutlet weak var SearchBar: UISearchBar!
     //ロングタップしたときに立てるピンを定義
     var pinByLongPress:MKPointAnnotation!
+
     //CLLocationManagerの入れ物
     var myLocationManager: CLLocationManager!
+    
+    //BLE
     let ble = BLE_controlViewController()
     let his = HistoryViewController()
     
@@ -152,7 +155,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
             print(self.PointLatitude)
             self.showAlert(post: (view.annotation!.subtitle)!!, name: (view.annotation!.title)!!, lat:self.PointLatitude, lon: self.PointLongitude)
         }else{
-            let alert: UIAlertController = UIAlertController(title: "現在地はナビゲーションできません", message: "他の場所を選択してください", preferredStyle: .alert)
+            let alert: UIAlertController = UIAlertController(title: "現在地は\nナビゲーションできません", message: "他の場所を選択してください", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default)
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
@@ -189,6 +192,41 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
         // アラート表示
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    //ピンをすべて削除
+    @IBAction func Cancel(_ sender: Any) {
+        let alert = UIAlertController(
+            title: "ピンを削除してもよろしいですか？",
+            message:"すべて消えます",
+            preferredStyle: .actionSheet)
+        // アラートにボタンをつける
+        alert.addAction(UIAlertAction(title: "ピンを削除", style: .destructive, handler: { action in
+            self.MapView.removeAnnotations(self.MapView.annotations)
+    }))
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
+        // アラート表示
+        self.present(alert, animated: true, completion: nil)
+}
+    
+    //現在地にフォーカス
+    @IBAction func Location(_ sender: UIButton) {
+        if myLocationManager.location?.coordinate == nil{
+            let alert: UIAlertController = UIAlertController(title: "位置情報の取得に\n失敗しました", message: "端末,アプリの位置情報を\n許可してください", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        }else{
+        //中心座標
+        let center = myLocationManager.location?.coordinate
+        
+        //表示範囲
+        let span = MKCoordinateSpanMake(0.3, 0.3)
+        
+        //中心座標と表示範囲をマップに登録する。
+        let region = MKCoordinateRegionMake(center!, span)
+        self.MapView.setRegion(region, animated:true)
+        }
     }
     
 }
