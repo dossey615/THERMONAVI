@@ -12,9 +12,6 @@
 		E3C5CB5F1FD10C0B00CC3B49 /* saveHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C5CB5E1FD10C0B00CC3B49 /* saveHistory.swift */; };
 		E3C5CB611FD11A4400CC3B49 /* load_History.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C5CB601FD11A4400CC3B49 /* load_History.swift */; };
 		E3C756251FC7F9DA007E1BB6 /* BLE_controlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C756241FC7F9DA007E1BB6 /* BLE_controlViewController.swift */; };
-		E3CA6CC81FD7C59100DCA0E7 /* map1.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CA6CC71FD7C59100DCA0E7 /* map1.png */; };
-		E3CC5B541FC7241B005C2BFA /* タイトルロゴ.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CC5B531FC7241B005C2BFA /* タイトルロゴ.png */; };
-		E3CC5B561FC73433005C2BFA /* ブルートゥースのアイコン 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CC5B551FC73433005C2BFA /* ブルートゥースのアイコン 1.png */; };
 		E3CC6F881FB0C52800490A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CC6F871FB0C52800490A13 /* AppDelegate.swift */; };
 		E3CC6F8D1FB0C52800490A13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CC6F8B1FB0C52800490A13 /* Main.storyboard */; };
 		E3CC6F8F1FB0C52800490A13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3CC6F8E1FB0C52800490A13 /* Assets.xcassets */; };
@@ -46,9 +43,6 @@
 		E3C5CB5E1FD10C0B00CC3B49 /* saveHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveHistory.swift; sourceTree = "<group>"; };
 		E3C5CB601FD11A4400CC3B49 /* load_History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = load_History.swift; sourceTree = "<group>"; };
 		E3C756241FC7F9DA007E1BB6 /* BLE_controlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLE_controlViewController.swift; sourceTree = "<group>"; };
-		E3CA6CC71FD7C59100DCA0E7 /* map1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map1.png; path = "画像フォルダ/map1.png"; sourceTree = SOURCE_ROOT; };
-		E3CC5B531FC7241B005C2BFA /* タイトルロゴ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "タイトルロゴ.png"; path = "画像フォルダ/タイトルロゴ.png"; sourceTree = SOURCE_ROOT; };
-		E3CC5B551FC73433005C2BFA /* ブルートゥースのアイコン 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ブルートゥースのアイコン 1.png"; path = "画像フォルダ/ブルートゥースのアイコン 1.png"; sourceTree = SOURCE_ROOT; };
 		E3CC6F841FB0C52800490A13 /* THERMONAVI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THERMONAVI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3CC6F871FB0C52800490A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3CC6F8C1FB0C52800490A13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,9 +118,6 @@
 				E3CC6F901FB0C52800490A13 /* LaunchScreen.storyboard */,
 				E3CC6F8E1FB0C52800490A13 /* Assets.xcassets */,
 				E3CC6F931FB0C52800490A13 /* Info.plist */,
-				E3CA6CC71FD7C59100DCA0E7 /* map1.png */,
-				E3CC5B531FC7241B005C2BFA /* タイトルロゴ.png */,
-				E3CC5B551FC73433005C2BFA /* ブルートゥースのアイコン 1.png */,
 			);
 			path = THERMONAVI;
 			sourceTree = "<group>";
@@ -273,10 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3CC5B561FC73433005C2BFA /* ブルートゥースのアイコン 1.png in Resources */,
-				E3CA6CC81FD7C59100DCA0E7 /* map1.png in Resources */,
 				E3CC6F921FB0C52800490A13 /* LaunchScreen.storyboard in Resources */,
-				E3CC5B541FC7241B005C2BFA /* タイトルロゴ.png in Resources */,
 				E3CC6F8F1FB0C52800490A13 /* Assets.xcassets in Resources */,
 				E3CC6F8D1FB0C52800490A13 /* Main.storyboard in Resources */,
 			);
@@ -480,7 +468,7 @@
 				DEVELOPMENT_TEAM = KDV5SVN7RH;
 				INFOPLIST_FILE = THERMONAVI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.project.THERMONAVI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.THERMONAVI3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -495,7 +483,7 @@
 				DEVELOPMENT_TEAM = KDV5SVN7RH;
 				INFOPLIST_FILE = THERMONAVI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.project.THERMONAVI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.THERMONAVI3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
